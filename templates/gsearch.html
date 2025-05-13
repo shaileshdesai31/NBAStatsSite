@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<br>
+<h1>General Statistic Search</h1>
+<br>
+<p><i>Search performance on all players with certain stat with filters to better analyze their play. (Uses max of one month of rolling data.)</i></p>
+<hr>
+<form method = "POST">
+
+  <div class = "form-group">
+        <label>After this date</label>
+        <input type="date" class="form" id = "d" name = "d" value="2024-01-01">
+  </div>
+
+  <div class = "form-group">
+        <label>Min p+r+a</label>
+        <input type="number" step=".1" class="form" id = "pra" name = "pra" placeholder="20" value="20">
+  </div>
+
+  <div class = "form-group">
+        <label>Min pts</label>
+        <input type="number" step=".1" class="form" id = "pts" name = "pts" placeholder="0" value="0">
+  </div>
+
+  <div class = "form-group">
+        <label>Min reb</label>
+        <input type="number" step=".1" class="form" id = "reb" name = "reb" placeholder="0" value="0">
+  </div>
+
+  <div class = "form-group">
+        <label>Min ast</label>
+        <input type="number" step=".1" class="form" id = "ast" name = "ast" placeholder="0" value="0">
+  </div>
+
+  <div class = "form-group">
+        <label>Min Minutes</label>
+        <input type="number" step=".1" class="form" id = "min" name = "min" placeholder="0" value="0">
+  </div>
+
+  <div class = "form-group">
+        <label>Min gp</label>
+        <input type="number" step=".1" class="form" id = "gp" name = "gp" placeholder="10" value="10">
+  </div>
+
+  <div class = "form-group">
+    <label>Home/Away</label>
+    <select class="form" id = "home" name = "home">
+      <option value="all">all</option>
+      <option value="home">home</option>
+      <option value="away">away</option>
+    </select>
+  </div>
+
+  <br>
+
+  <button type="submit" class="btn btn-primary">Search</button>
+
+</form>
+
+{% endblock %}
+

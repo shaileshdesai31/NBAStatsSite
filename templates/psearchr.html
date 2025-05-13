@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<br>
+<h1>Player Search Results</h1>
+<hr>
+<p>{{desc|safe}}</p>
+<div class="info">
+   {{img|safe}}
+</div>
+
+<br>
+{% for table in tables %}
+            {{ table|safe }}
+{% endfor %}
+{% endblock %}

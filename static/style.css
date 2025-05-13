@@ -1,0 +1,38 @@
+td, th {
+    border: 1px solid #777;
+    padding: 1rem;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+tbody tr:nth-child(odd) {
+    background: #eee;
+}
+caption {
+    font-size: 0.8rem;
+}
+
+select {
+    display:table-row;
+}
+option {
+    display:table-cell;
+    border: .5px solid #777;
+    padding: .2rem;
+    text-align: center;
+}
+
+.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }
+.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
+.autocomplete-selected { background: #F0F0F0; }
+.autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
+.autocomplete-group { padding: 2px 5px; }
+.autocomplete-group strong { display: block; border-bottom: 1px solid #000; }
+
+.autocomplete-searchbox {
+    height: 25px;
+    width: 300px;
+}

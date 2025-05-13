@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<br>
+<h1>Player Statistic Search</h1>
+<br>
+<p><i>Search player(s) performance on a certain stat with filters to better analyze their play.</i></p>
+<hr>
+<form method = "POST">
+  <div class = "form-group" >
+        <label>Player 1</label>
+        <input type="text" class="autocomplete-searchbox form" id = "autocomplete" name = "player1" placeholder="Player Name (first and last)" style="width: 300px;" required="required">
+    </div>
+  <div class = "form-group">
+    <label>Select a stat</label>
+    <select class="form" id = "stat" name = "stat" required="required">
+      <option value="pra">p+r+a</option>
+      <option value="pts">pts</option>
+      <option value="ast">ast</option>
+      <option value="reb">reb</option>
+      <option value="3pm">3pm</option>
+      <option value="stl">stl</option>
+      <option value="blk">blk</option>
+      <option value="tov">tov</option>
+    </select>
+  </div>
+
+  <div class = "form-group">
+        <label>After this date</label>
+        <input type="date" class="form" id = "d" name = "d">
+  </div>
+
+  <div class = "form-group">
+        <label>Opponent Defensive Rating Rank Restriction</label>
+        <input type="text" class="form" id = "opp_def" name = "opp_def" placeholder="Enter wanted range (ex1: >20, ex2: <10)" style="width: 300px;">
+  </div>
+
+  <div class = "form-group">
+        <label>Opponent Offensive Rating Rank Restriction</label>
+        <input type="text" class="form" id = "opp_off" name = "opp_off" placeholder="Enter wanted range (ex1: >20, ex2: <10)" style="width: 300px;">
+  </div>
+
+  <div class = "form-group">
+        <label>Opponent Pace Rank Restriction</label>
+        <input type="text" class="form" id = "opp_pace" name = "opp_pace" placeholder="Enter wanted range (ex1: >20, ex2: <10)" style="width: 300px;">
+  </div>
+
+  <div class = "form-group">
+        <label>Opponent Win % Restriction</label>
+        <input type="text" class="form" id = "win_pct" name = "win_pct" placeholder="Enter wanted range (ex1: > 0.700, ex2: < 0.500)" style="width: 370px;">
+  </div>
+
+  <div class = "form-group">
+    <label>Home/Away</label>
+    <select class="form" id = "home" name = "home">
+      <option value="all">all</option>
+      <option value="home">home</option>
+      <option value="away">away</option>
+    </select>
+  </div>
+
+  <div class = "form-group">
+    <label>Base Stat Line (for graph)</label>
+    <input type= 'number' step=".1" class="form" id = "base" name = "base" placeholder="27.5">
+  </div>
+
+  <br>
+
+  <button type="submit" class="btn btn-primary">Search</button>
+
+</form>
+
+<script type = "text/javascript" src = "{{url_for('static',filename='autocomplete.js')}}"></script>
+
+
+{% endblock %}
+
